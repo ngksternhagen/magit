@@ -1,0 +1,38 @@
+* TODO change help command output into org-formatted TODO list
+* help command output
+~/src/magit/lisp $ git config --help
+WARNING: terminal is not fully functional
+-  (press RETURN)
+GIT-CONFIG(1)                                  Git Manual                                 GIT-CONFIG(1)
+
+NAME
+       git-config - Get and set repository or global options
+
+SYNOPSIS
+       git config [<file-option>] [type] [--show-origin] [-z|--null] name [value [value_regex]]
+       git config [<file-option>] [type] --add name value
+       git config [<file-option>] [type] --replace-all name value [value_regex]
+       git config [<file-option>] [type] [--show-origin] [-z|--null] --get name [value_regex]
+       git config [<file-option>] [type] [--show-origin] [-z|--null] --get-all name [value_regex]
+       git config [<file-option>] [type] [--show-origin] [-z|--null] [--name-only] --get-regexp name_regex [value_regex]
+       git config [<file-option>] [type] [-z|--null] --get-urlmatch name URL
+       git config [<file-option>] --unset name [value_regex]
+       git config [<file-option>] --unset-all name [value_regex]
+       git config [<file-option>] --rename-section old_name new_name
+       git config [<file-option>] --remove-section name
+       git config [<file-option>] [--show-origin] [-z|--null] [--name-only] -l | --list
+       git config [<file-option>] --get-color name [default]
+       git config [<file-option>] --get-colorbool name [stdout-is-tty]
+       git config [<file-option>] -e | --edit
+
+DESCRIPTION
+       You can query/set/replace/unset options with this command. The name is actually the section and
+       the key separated by a dot, and the value will be escaped.
+
+       Multiple lines can be added to an option by using the --add option. If you want to update or
+       unset an option which can occur on multiple lines, a POSIX regexp value_regex needs to be given.
+       Only the existing values that match the regexp are updated or unset. If you want to handle the
+       lines that do not match the regex, just prepend a single exclamation mark in front (see also the
+       section called "EXAMPLES").
+
+:
